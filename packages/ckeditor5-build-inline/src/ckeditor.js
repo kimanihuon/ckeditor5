@@ -16,6 +16,9 @@ import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import Image from '@ckeditor/ckeditor5-image/src/image';
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
+import ImageInsert from '@ckeditor/ckeditor5-image/src/imageinsert';
+import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
@@ -30,7 +33,7 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 
-export default class InlineEditor extends InlineEditorBase {}
+export default class InlineEditor extends InlineEditorBase { }
 
 // Plugins to include in the build.
 InlineEditor.builtinPlugins = [
@@ -44,6 +47,9 @@ InlineEditor.builtinPlugins = [
 	EasyImage,
 	Heading,
 	Image,
+	ImageResize,
+	ImageInsert,
+	LinkImage,
 	ImageCaption,
 	ImageStyle,
 	ImageToolbar,
@@ -75,6 +81,7 @@ InlineEditor.defaultConfig = {
 			'outdent',
 			'|',
 			'imageUpload',
+			'imageInsert',
 			'blockQuote',
 			'insertTable',
 			'mediaEmbed',
@@ -83,11 +90,35 @@ InlineEditor.defaultConfig = {
 		]
 	},
 	image: {
+		// Configure the available styles.
+		styles: [
+			'alignLeft', 'alignCenter', 'alignRight'
+		],
+
+		// Configure the available image resize options.
+		resizeOptions: [
+			{
+				name: 'imageResize:original',
+				label: 'Original',
+				value: null
+			},
+			{
+				name: 'imageResize:50',
+				label: '50%',
+				value: '50'
+			},
+			{
+				name: 'imageResize:75',
+				label: '75%',
+				value: '75'
+			}
+		],
 		toolbar: [
-			'imageStyle:full',
-			'imageStyle:side',
+			'imageStyle:alignLeft', 'imageStyle:alignCenter', 'imageStyle:alignRight',
 			'|',
-			'imageTextAlternative'
+			'imageTextAlternative',
+			'|',
+			'linkImage'
 		]
 	},
 	table: {
