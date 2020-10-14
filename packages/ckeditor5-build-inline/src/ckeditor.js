@@ -113,6 +113,8 @@ InlineEditor.defaultConfig = {
 		toolbar: [
 			'imageStyle:alignLeft', 'imageStyle:alignCenter', 'imageStyle:alignRight',
 			'|',
+			'imageResize',
+			'|',
 			'imageTextAlternative'
 		]
 	},
