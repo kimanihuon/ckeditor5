@@ -6,6 +6,7 @@
 // The editor creator to use.
 import InlineEditorBase from '@ckeditor/ckeditor5-editor-inline/src/inlineeditor';
 
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
@@ -13,6 +14,7 @@ import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
+import Font from '@ckeditor/ckeditor5-font/src/font';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
@@ -34,6 +36,7 @@ export default class InlineEditor extends InlineEditorBase { }
 
 // Plugins to include in the build.
 InlineEditor.builtinPlugins = [
+	Alignment,
 	Essentials,
 	UploadAdapter,
 	Autoformat,
@@ -41,6 +44,7 @@ InlineEditor.builtinPlugins = [
 	Italic,
 	BlockQuote,
 	CKFinder,
+	Font,
 	Heading,
 	Image,
 	ImageResize,
@@ -82,8 +86,7 @@ InlineEditor.defaultConfig = {
 			'bulletedList',
 			'numberedList',
 			'|',
-			'indent',
-			'outdent',
+			'alignment',
 			'|',
 			'imageInsert',
 			'blockQuote',
@@ -92,10 +95,6 @@ InlineEditor.defaultConfig = {
 			'undo',
 			'redo'
 		]
-	},
-	indentBlock: {
-		offset: 1,
-		unit: 'em'
 	},
 	image: {
 		// Configure the available styles.
