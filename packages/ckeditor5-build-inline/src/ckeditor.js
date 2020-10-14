@@ -62,8 +62,19 @@ InlineEditor.builtinPlugins = [
 // Editor configuration.
 InlineEditor.defaultConfig = {
 	toolbar: {
+		fontFamily: {
+			options: [
+				"Arial, Helvetica, sans-serif",
+				"Ubuntu, Arial, sans-serif",
+				"Ubuntu Mono, Courier New, Courier, monospace"
+			]
+		},
 		items: [
 			'heading',
+			'|',
+			"fontSize",
+			"fontColor",
+			"fontBackgroundColor",
 			'|',
 			'bold',
 			'italic',
@@ -81,6 +92,10 @@ InlineEditor.defaultConfig = {
 			'undo',
 			'redo'
 		]
+	},
+	indentBlock: {
+		offset: 1,
+		unit: 'em'
 	},
 	image: {
 		// Configure the available styles.
