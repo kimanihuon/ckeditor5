@@ -13,12 +13,10 @@ import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
-import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
 import ImageInsert from '@ckeditor/ckeditor5-image/src/imageinsert';
-import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
@@ -43,12 +41,10 @@ InlineEditor.builtinPlugins = [
 	Italic,
 	BlockQuote,
 	CKFinder,
-	EasyImage,
 	Heading,
 	Image,
 	ImageResize,
 	ImageInsert,
-	LinkImage,
 	ImageCaption,
 	ImageStyle,
 	ImageToolbar,
